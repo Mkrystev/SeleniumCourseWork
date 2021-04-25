@@ -52,8 +52,8 @@ public class SignUpTest extends TestUtils {
         wait.until(ExpectedConditions.visibilityOf(signUpPage.getPhErrMsg()));
         String phoneMsg = signUpPage.getPhErrMsg().getText();
 
-        wait.until(ExpectedConditions.visibilityOf(signUpPage.getbDayErrMsg()));
-        String bDayMsg = signUpPage.getbDayErrMsg().getText();
+        wait.until(ExpectedConditions.visibilityOf(signUpPage.getBDayErrMsg()));
+        String bDayMsg = signUpPage.getBDayErrMsg().getText();
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(emailMsg, "That email address is too short, please use a longer one.");

@@ -55,54 +55,43 @@ public class SignUpPage extends BaseDriver {
     public WebElement emailInputField() {
         return emailInputField;
     }
-
     public WebElement firstNameInputField() {
         return firstNameInputField;
     }
-
     public WebElement lastNameInputField() {
         return lastNameInputField;
     }
-
     public WebElement phoneNumberInputField() {
         return phoneNumberInputField;
     }
-
     public WebElement passwordInputField() {
         return passwordInputField;
     }
-
     public WebElement selectBirthMonth() {
         Select list = new Select(selectBirthMonth);
         list.selectByValue("7");
         return selectBirthMonth;
     }
-
     public WebElement birthDayInput() {
         return birthDayInput;
     }
-
     public WebElement birthYearInout() {
         return birthYearInput;
     }
-
     public WebElement genderInputField() {
         return genderInputField;
     }
-
     public WebElement getEmailErrMsg(){
         return emailErrMsg;
     }
-
     public WebElement getPassErrMsg(){
         return passErrMsg;
     }
     public WebElement getPhErrMsg(){
         return phErrMsg;
     }
-    public WebElement getbDayErrMsg(){
-        bDayErrMsg.getText();
+    public WebElement getBDayErrMsg(){
         return bDayErrMsg;
-
     }
+
 }
