@@ -4,6 +4,7 @@ import com.selenium.coursework.utils.BaseDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class SignUpPage extends BaseDriver {
 
@@ -72,6 +73,8 @@ public class SignUpPage extends BaseDriver {
     }
 
     public WebElement selectBirthMonth() {
+        Select list = new Select(selectBirthMonth);
+        list.selectByValue("7");
         return selectBirthMonth;
     }
 
@@ -98,6 +101,8 @@ public class SignUpPage extends BaseDriver {
         return phErrMsg;
     }
     public WebElement getbDayErrMsg(){
+        bDayErrMsg.getText();
         return bDayErrMsg;
+
     }
 }

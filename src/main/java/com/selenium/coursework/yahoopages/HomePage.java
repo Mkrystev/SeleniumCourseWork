@@ -23,11 +23,13 @@ public class HomePage extends BaseDriver {
         super(driver);
     }
 
-    public WebElement cookieWindow() {
+    public WebElement cookieWindowClick() {
+        cookieWindow.click();
         return cookieWindow;
     }
 
-    public WebElement signInBtn() {
+    public WebElement signInBtnClick() {
+        signInBtn.click();
         return signInBtn;
     }
 

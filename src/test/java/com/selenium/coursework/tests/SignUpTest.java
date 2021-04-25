@@ -7,7 +7,6 @@ import com.selenium.coursework.yahoopages.HomePage;
 import com.selenium.coursework.yahoopages.LoginPage;
 import com.selenium.coursework.yahoopages.SignUpPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -32,9 +31,9 @@ public class SignUpTest extends TestUtils {
         SignUpPage signUpPage = new SignUpPage(driver);
         WebDriverWait wait = new WebDriverWait(driver, 15);
 
-        homePage.cookieWindow().click();
-        homePage.signInBtn().click();
-        loginPage.createAccBtn().click();
+        homePage.cookieWindowClick();
+        homePage.signInBtnClick();
+        loginPage.createAccBtnClick();
 
 
         signUpPage.firstNameInputField().sendKeys(firstName);
@@ -42,11 +41,7 @@ public class SignUpTest extends TestUtils {
         signUpPage.emailInputField().sendKeys(emailAddress);
         signUpPage.passwordInputField().sendKeys(pass);
         signUpPage.phoneNumberInputField().sendKeys(phNumber);
-
-
-        Select list = new Select(signUpPage.selectBirthMonth());
-        list.selectByValue("7");
-
+        signUpPage.selectBirthMonth();
         signUpPage.birthDayInput().sendKeys(day);
         signUpPage.birthYearInout().sendKeys(year);
         signUpPage.genderInputField().sendKeys(gender);

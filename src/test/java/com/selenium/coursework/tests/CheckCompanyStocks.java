@@ -29,7 +29,7 @@ public class CheckCompanyStocks extends TestUtils {
         WebDriverWait wait = new WebDriverWait(driver, 15);
 
 
-        homePage.cookieWindow().click();
+        homePage.cookieWindowClick();
         homePage.searchField().sendKeys(companyName);
         homePage.searchBtn().click();
 
