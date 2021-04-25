@@ -5,7 +5,6 @@ import com.selenium.coursework.base.TestUtils;
 import com.selenium.coursework.utils.CsvReader;
 import com.selenium.coursework.yahoopages.FinanceStatistic;
 import com.selenium.coursework.yahoopages.HomePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
@@ -35,12 +34,12 @@ public class CheckCompanyStocks extends TestUtils {
         homePage.searchBtn().click();
 
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[@data-test='DIVIDEND_AND_YIELD-value']")));
+        wait.until(ExpectedConditions.visibilityOf(amzApl.dividendAndYield()));
 
         String devs = amzApl.dividendAndYield().getText();
         amzApl.statistics().click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Price/Book']/../following-sibling::td")));
+        wait.until(ExpectedConditions.visibilityOf(amzApl.priceBook()));
         String mrq = amzApl.priceBook().getText();
 
 

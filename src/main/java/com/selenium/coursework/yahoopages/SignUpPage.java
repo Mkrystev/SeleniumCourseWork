@@ -38,6 +38,18 @@ public class SignUpPage extends BaseDriver {
     @FindBy(css = "#usernamereg-freeformGender")
     private WebElement genderInputField;
 
+    @FindBy(id = "reg-error-yid")
+    private WebElement emailErrMsg;
+
+    @FindBy(id = "reg-error-password")
+    private WebElement passErrMsg;
+
+    @FindBy(id = "reg-error-phone")
+    private WebElement phErrMsg;
+
+    @FindBy(id = "reg-error-birthDate")
+    private WebElement bDayErrMsg;
+
 
     public WebElement emailInputField() {
         return emailInputField;
@@ -73,5 +85,19 @@ public class SignUpPage extends BaseDriver {
 
     public WebElement genderInputField() {
         return genderInputField;
+    }
+
+    public WebElement getEmailErrMsg(){
+        return emailErrMsg;
+    }
+
+    public WebElement getPassErrMsg(){
+        return passErrMsg;
+    }
+    public WebElement getPhErrMsg(){
+        return phErrMsg;
+    }
+    public WebElement getbDayErrMsg(){
+        return bDayErrMsg;
     }
 }

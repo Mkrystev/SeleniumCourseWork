@@ -6,7 +6,6 @@ import com.selenium.coursework.utils.CsvReader;
 import com.selenium.coursework.yahoopages.HomePage;
 import com.selenium.coursework.yahoopages.LoginPage;
 import com.selenium.coursework.yahoopages.SignUpPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -37,7 +36,6 @@ public class SignUpTest extends TestUtils {
         homePage.signInBtn().click();
         loginPage.createAccBtn().click();
 
-        //Populating the data from the CSV
 
         signUpPage.firstNameInputField().sendKeys(firstName);
         signUpPage.lastNameInputField().sendKeys(lastName);
@@ -53,13 +51,14 @@ public class SignUpTest extends TestUtils {
         signUpPage.birthYearInout().sendKeys(year);
         signUpPage.genderInputField().sendKeys(gender);
 
-        String emailMsg = driver.findElement(By.id("reg-error-yid")).getText();
-        String passMsg = driver.findElement(By.id("reg-error-password")).getText();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("reg-error-phone")));
-        String phoneMsg = driver.findElement(By.id("reg-error-phone")).getText();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("reg-error-birthDate")));
-        String bDayMsg = driver.findElement(By.id("reg-error-birthDate")).getText();
+        String emailMsg = signUpPage.getEmailErrMsg().getText();
+        String passMsg = signUpPage.getPassErrMsg().getText();
 
+        wait.until(ExpectedConditions.visibilityOf(signUpPage.getPhErrMsg()));
+        String phoneMsg = signUpPage.getPhErrMsg().getText();
+
+        wait.until(ExpectedConditions.visibilityOf(signUpPage.getbDayErrMsg()));
+        String bDayMsg = signUpPage.getbDayErrMsg().getText();
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(emailMsg, "That email address is too short, please use a longer one.");
