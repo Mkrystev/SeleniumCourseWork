@@ -28,16 +28,15 @@ public class HomePage extends BaseDriver {
         return cookieWindow;
     }
 
-    public WebElement signInBtnClick() {
+    public void signInBtnClick() {
         signInBtn.click();
-        return signInBtn;
     }
 
     public WebElement searchField() {
         return searchField;
     }
 
-    public WebElement searchBtn() {
-        return searchBtn;
+    public void searchBtnClick() {
+        searchBtn.click();
     }
 }

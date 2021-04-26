@@ -67,10 +67,9 @@ public class SignUpPage extends BaseDriver {
     public WebElement passwordInputField() {
         return passwordInputField;
     }
-    public WebElement selectBirthMonth() {
+    public void selectBirthMonth() {
         Select list = new Select(selectBirthMonth);
         list.selectByValue("7");
-        return selectBirthMonth;
     }
     public WebElement birthDayInput() {
         return birthDayInput;

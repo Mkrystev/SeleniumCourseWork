@@ -14,8 +14,7 @@ public class LoginPage extends BaseDriver {
     @FindBy(id = "createacc")
     private WebElement createAccBtn;
 
-    public WebElement createAccBtnClick() {
+    public void createAccBtnClick() {
         createAccBtn.click();
-        return createAccBtn;
     }
 }

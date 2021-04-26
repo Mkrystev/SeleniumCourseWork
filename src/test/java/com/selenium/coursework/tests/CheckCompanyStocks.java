@@ -31,7 +31,7 @@ public class CheckCompanyStocks extends TestUtils {
 
         homePage.cookieWindowClick();
         homePage.searchField().sendKeys(companyName);
-        homePage.searchBtn().click();
+        homePage.searchBtnClick();
 
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         wait.until(ExpectedConditions.visibilityOf(amzApl.dividendAndYield()));
